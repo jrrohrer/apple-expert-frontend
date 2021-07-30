@@ -26,7 +26,22 @@ function getApples() {
   fetch(`http://localhost:3000/api/v1/apples?category_id=${categoryId}`)
   .then(response => response.json())
   .then(apples => {
-    console.log(apples);
+    apples.data.forEach(apple => {
+      displayApple(apple)
+    })
   })
   // add catch for error handling...if the array is empty, ask user to select a different option
+}
+
+function displayApple(apple) {
+  const appleCard = `
+    <div data-id=${apple.id}
+      <h3>${apple.attributes.variety}</h3>
+      <img src=${apple.attributes.image_url} height=200 width=250>
+      <p>Harvested in ${apple.attributes.harvest}</p>
+      <p>${apple.attributes.notes}</p>
+    </div> 
+    <br>`;
+
+  document.querySelector('#apple-cards').innerHTML += appleCard;
 }
