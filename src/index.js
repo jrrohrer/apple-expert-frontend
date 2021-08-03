@@ -12,7 +12,7 @@ function populateCategoryDropdown() {
   getCategories()
   .then(categories => {
     const dropDown = document.getElementById('category'); // gets the first select element
-    const categorySelection = document.getElementById('add-category');
+    const categorySelection = document.getElementById('add-category'); // gets the select element in the new apple form
     categories.data.forEach(category => { // for each category in the data object
       let newOption = new Option(category.attributes.name, category.id) // create a new option with name key and id value
       dropDown.add(newOption, undefined) // add the new option to the bottom of the dropdown list
@@ -77,6 +77,6 @@ function postApple(variety, harvest, notes, image_url, category_ids) {
   .then(apple => {console.log(apple)})
 }
 
-// Next step: adding a form for creating a new apple & setting up the POST fetch
+
 // Then: adding an edit feature, adding a delete feature, error handling, and refactoring
 // Finally: styling!
