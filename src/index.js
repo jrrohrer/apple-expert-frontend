@@ -71,7 +71,7 @@ function postApple(variety, harvest, notes, image_url, category_ids) {
   fetch("http://localhost:3000/api/v1/apples", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(bodyData)
+    body: JSON.stringify({apple: bodyData})
   })
   .then(response => response.json())
   .then(apple => {console.log(apple)})
