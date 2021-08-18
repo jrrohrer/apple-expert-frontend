@@ -25,7 +25,7 @@ class AppleApi {
       body: JSON.stringify({apple: bodyData})
     })
     .then(response => response.json())
-    .then(apple => {console.log(apple)})
+    .then(apple => {console.log(apple)}) // do something with the new apple here. Add to DOM? Show the card and inform the user their apple has been saved to the DB?
     .catch(err => alert(err));
   }
 }

@@ -1,28 +1,18 @@
 const port = "http://localhost:3000/api/v1"
 const appleApi = new AppleApi(port)
 const categoryApi = new CategoryApi(port)
-const appleCardsContainer = document.querySelector('#apple-cards')
+const categorySelectSubmit = document.getElementById('category-form-submit')
+const appleCardsContainer = document.getElementById('apple-cards')
+const createAppleForm = document.getElementById('create-apple-form')
 
-populateCategoryDropdown();
+// Populate the dropdown menus with category objects so users can select/assign them dynamically:
+categoryApi.populateCategoryDropdown();
 
-function populateCategoryDropdown() {
-  categoryApi.getCategories()
-  .then(categories => {
-    const dropDown = document.getElementById('category'); // gets the first select element
-    const categorySelection = document.getElementById('add-category'); // gets the select element in the new apple form
-    categories.data.forEach(category => { // for each category in the data object
-      let newOption = new Option(category.attributes.name, category.id) // create a new option with name key and id value
-      dropDown.add(newOption, undefined) // add the new option to the bottom of the dropdown list
-      let newCategoryOption = new Option(category.attributes.name, category.id)
-      categorySelection.add(newCategoryOption, undefined)
-    })
-  })
-  .catch(err => alert(err));
-}
 
-document.getElementById('category-form-submit').addEventListener('click', appleApi.getApples) 
+// When user clicks "Show me the apples!", get the apples in that category, and display them in cards on the DOM:
+categorySelectSubmit.addEventListener('click', appleApi.getApples) 
 
-const createAppleForm = document.querySelector('#create-apple-form')
+// When the user clicks "Save New Apple", save the user's inputs to variables and use them to populate a post fetch to save the new apple object to the database.
 createAppleForm.addEventListener('submit', (e) => createFormHandler(e));
 
 function createFormHandler(e) {
@@ -34,6 +24,7 @@ function createFormHandler(e) {
   const categorySelections = document.getElementById('add-category').selectedOptions;
   const categoryIds = Array.from(categorySelections).map(x => x.value);
   appleApi.postApple(varietyInput, harvestInput, notesInput, imageInput, categoryIds)
+  e.target.reset()
 }
 
 // Then: adding an edit feature, adding a delete feature, error handling, and refactoring

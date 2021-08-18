@@ -1,6 +1,7 @@
 class Category {
-  constructor(category) {
-    this.name = category.name
+  constructor(categoryId, categoryAttributes) {
+    this.id = categoryId
+    this.name = categoryAttributes.name
   }
 
 }
