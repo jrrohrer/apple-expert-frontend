@@ -1,3 +1,5 @@
+const port = "http://localhost:3000/api/v1"
+const appleApi = new AppleApi(port)
 const appleCardsContainer = document.querySelector('#apple-cards')
 
 populateCategoryDropdown();
@@ -23,20 +25,7 @@ function populateCategoryDropdown() {
   .catch(err => alert(err));
 }
 
-document.getElementById('category-form-submit').addEventListener('click', getApples) 
-
-function getApples() {
-  let categoryId = parseInt(document.getElementById('category').value); // getting the category ID and turning it into an integer
-  fetch(`http://localhost:3000/api/v1/apples?category_id=${categoryId}`) // passing the category id to the apple controller as a query param so that only the apples that match taht category can be returned
-  .then(response => response.json())
-  .then(apples => {
-    apples.data.forEach(apple => {
-      let a = new Apple(apple.id, apple.attributes)
-      a.displayApple()
-    })
-  })
-  .catch(err => alert(err));
-}
+document.getElementById('category-form-submit').addEventListener('click', appleApi.getApples) 
 
 const createAppleForm = document.querySelector('#create-apple-form')
 createAppleForm.addEventListener('submit', (e) => createFormHandler(e));
@@ -49,21 +38,8 @@ function createFormHandler(e) {
   const imageInput = document.querySelector("#input-image-url").value;
   const categorySelections = document.getElementById('add-category').selectedOptions;
   const categoryIds = Array.from(categorySelections).map(x => x.value);
-  postApple(varietyInput, harvestInput, notesInput, imageInput, categoryIds)
+  appleApi.postApple(varietyInput, harvestInput, notesInput, imageInput, categoryIds)
 }
-
-
-function postApple(variety, harvest, notes, image_url, category_ids) {
-  let bodyData = {variety, harvest, notes, image_url, category_ids}
-  fetch("http://localhost:3000/api/v1/apples", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({apple: bodyData})
-  })
-  .then(response => response.json())
-  .then(apple => {console.log(apple)})
-}
-
 
 // Then: adding an edit feature, adding a delete feature, error handling, and refactoring
 // Finally: styling!
