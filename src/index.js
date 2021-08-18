@@ -1,4 +1,4 @@
-console.log("connected!")
+const appleCardsContainer = document.querySelector('#apple-cards')
 
 populateCategoryDropdown();
 
@@ -31,26 +31,12 @@ function getApples() {
   .then(response => response.json())
   .then(apples => {
     apples.data.forEach(apple => {
-      debugger
-      let t = new Apple(apple.id, apple.attributes)
-      displayApple(apple)
+      let a = new Apple(apple.id, apple.attributes)
+      a.displayApple()
     })
   })
   .catch(err => alert(err));
   // add catch for error handling...if the array is empty, ask user to select a different option
-}
-
-function displayApple(apple) {
-  const appleCard = `
-    <div data-id=${apple.id}>
-      <img src=${apple.attributes.image_url} height="200" width="200">
-      <h3>${apple.attributes.variety}</h3>
-      <h4>Harvested in ${apple.attributes.harvest}</h4>
-      <p>${apple.attributes.notes}</p>
-    </div> 
-    <br>`;
-
-  document.querySelector('#apple-cards').innerHTML += appleCard;
 }
 
 const createAppleForm = document.querySelector('#create-apple-form')
