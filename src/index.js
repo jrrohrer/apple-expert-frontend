@@ -1,17 +1,12 @@
 const port = "http://localhost:3000/api/v1"
 const appleApi = new AppleApi(port)
+const categoryApi = new CategoryApi(port)
 const appleCardsContainer = document.querySelector('#apple-cards')
 
 populateCategoryDropdown();
 
-function getCategories() {
-  return fetch("http://localhost:3000/api/v1/categories")
-    .then(response => response.json());
-    // add catch for error handling
-}
-
 function populateCategoryDropdown() {
-  getCategories()
+  categoryApi.getCategories()
   .then(categories => {
     const dropDown = document.getElementById('category'); // gets the first select element
     const categorySelection = document.getElementById('add-category'); // gets the select element in the new apple form
