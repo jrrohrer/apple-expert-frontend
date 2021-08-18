@@ -22,8 +22,7 @@ class Apple {
         <h3>${this.variety}</h3>
         <h4>Harvested in ${this.harvest}</h4>
         <p>${this.notes}</p>
-      </div> 
-      <br>`;
+      </div>`;
   
     return appleCard;
   }

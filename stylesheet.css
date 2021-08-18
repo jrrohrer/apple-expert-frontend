@@ -40,4 +40,55 @@ button:hover {
   color: #963E40;
 }
 
+form {
+  margin: 20px;
+}
 
+input{
+  width: 50%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+select {
+  width: 50%;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+#apple-cards {
+  display: grid;
+  grid-gap: 15px;
+  background-color: #E2E5EA;
+  box-shadow: 0 4px 6px 0 #333D47;
+  border-radius: 8px;
+  padding: 20px; 
+  margin: 30px;
+}
+
+.apple-card {
+  background-color: #fff;
+  box-shadow: 0 4px 6px 0 #333D47;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px;
+}
+
+@media (min-width: 600px) {
+  #apple-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) { 
+  #apple-cards { grid-template-columns: repeat(3, 1fr); }
+}
