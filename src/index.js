@@ -36,7 +36,6 @@ function getApples() {
     })
   })
   .catch(err => alert(err));
-  // add catch for error handling...if the array is empty, ask user to select a different option
 }
 
 const createAppleForm = document.querySelector('#create-apple-form')
