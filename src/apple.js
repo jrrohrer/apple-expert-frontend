@@ -17,7 +17,7 @@ class Apple {
 
   getCard() {
     const appleCard = `
-      <div data-id=${this.id}>
+      <div data-id=${this.id} class="apple-card">
         <img src="${this.image_url}" height="200" width="200">
         <h3>${this.variety}</h3>
         <h4>Harvested in ${this.harvest}</h4>
