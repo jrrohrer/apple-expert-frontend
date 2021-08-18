@@ -7,6 +7,8 @@
   <title>Apple Expert</title>
 </head>
 <body>
+  <h1>Welcome to Apple Expert!</h1>
+  <p>This is a tool for helping you figure out which apples will work best for whatever recipe you're hoping to use. Just choose a category and we'll show you a whole bushel of apples that will work well for your needs!</p>
 
   <div id="category-form">
     <h2>What will you be using your apples for?</h2>
@@ -21,28 +23,23 @@
 
   </div>
 
-  <div id="new-apple-form-container">
-    <h2>Don't see the apple you're looking for? Add an apple variety to the database:</h2>
-    <button id="make-new-apple">Add a New Apple Variety</button>
-    <br>
-      <form id="create-apple-form">
-        <label for="variety">Variety:</label><br>
-        <input id="input-variety" type="text" name="variety"><br>
+  <h2>Don't see the apple you're looking for? Add an apple variety to the database:</h2>
+  <button id="make-new-apple">Add a New Apple Variety</button>
 
-        <label for="harvest">Harvest:</label><br>
-        <input id="input-harvest" type="text" name="harvest"><br>
-
-        <label for="notes">Notes (flavor, storage, interesting facts, etc):</label><br>
-        <textarea id="input-notes" name="notes"></textarea><br>
-
-        <label for="image_url">Image URL:</label><br>
-        <input id="input-image-url" type="url" name="image_url"><br>
-
-        <label for="category">Category (Ctrl-click to choose all that apply):</label><br>
-        <select id="add-category" name="category" multiple></select><br>
-
-        <button id="save-new-apple" type="submit">Save New Apple</button>
-      </form>
+  <div id="new-apple-form-container" style="display:none;">
+    <form id="create-apple-form">
+      <label for="variety">Variety:</label><br>
+      <input id="input-variety" type="text" name="variety"><br>
+      <label for="harvest">Harvest:</label><br>
+      <input id="input-harvest" type="text" name="harvest"><br>
+      <label for="notes">Notes (flavor, storage, interesting facts, etc):</label><br>
+      <textarea id="input-notes" name="notes"></textarea><br>
+      <label for="image_url">Image URL:</label><br>
+      <input id="input-image-url" type="url" name="image_url"><br>
+      <label for="category">Category (Ctrl-click to choose all that apply):</label><br>
+      <select id="add-category" name="category" multiple></select><br>
+      <button id="save-new-apple" type="submit">Save New Apple</button>
+    </form>
   </div>
 
   <!-- No HTML below this line! -->
