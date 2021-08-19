@@ -25,7 +25,10 @@ class AppleApi {
       body: JSON.stringify({apple: bodyData})
     })
     .then(response => response.json())
-    .then(apple => {console.log(apple)}) // do something with the new apple here. Add to DOM? Show the card and inform the user their apple has been saved to the DB?
+    .then(apple => {
+      console.log(apple) // do something with the apple object. Clear the previous search and show the user the new apple they created in the apple-cards div.
+      alert("Your apple has been saved to the database and will now appear in future searches. Thanks for helping to improve Apple Expert!")
+    }) 
     .catch(err => alert(err));
   }
 }
