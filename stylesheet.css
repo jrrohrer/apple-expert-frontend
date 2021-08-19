@@ -67,6 +67,8 @@ select {
   border-radius: 4px;
 }
 
+#apple-cards:empty { display: none }
+
 #apple-cards {
   display: grid;
   grid-gap: 15px;
