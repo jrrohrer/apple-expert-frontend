@@ -12,8 +12,6 @@ categoryApi.populateCategoryDropdown();
 // When user clicks "Show me the apples!", get the apples in that category, and display them in cards on the DOM:
 categorySelectSubmit.addEventListener('click', appleApi.getApples) 
 
-// add listeners to the Show me the apples! button to clear previous search, show/hide the apple-cards div, and then attach the new apples to the DOM. That way a previous search is removed from the DOM when a new search is run.
-
 // event listener on this button shows/hides the create apple form
 makeNewAppleBtn.addEventListener('click', () => {
   let div = document.getElementById('new-apple-form-container');

@@ -9,6 +9,7 @@ class AppleApi {
     fetch(`${port}/apples?category_id=${categoryId}`) // passing the category id to the apple controller as a query param so that only the apples that match taht category can be returned
     .then(response => response.json())
     .then(apples => {
+      appleCardsContainer.innerHTML = ""; // clears any old search results before displaying new ones
       apples.data.forEach(apple => {
         let a = new Apple(apple.id, apple.attributes)
         a.displayApple()
