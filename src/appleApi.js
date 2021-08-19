@@ -27,8 +27,11 @@ class AppleApi {
     })
     .then(response => response.json())
     .then(apple => {
-      console.log(apple) // do something with the apple object. Clear the previous search and show the user the new apple they created in the apple-cards div.
-      alert("Your apple has been saved to the database and will now appear in future searches. Thanks for helping to improve Apple Expert!")
+      // Some UI work here: To let the user know their apple is successfully created, clear the apple-cards div of search results, add a success message, and display the new apple card
+      appleCardsContainer.innerHTML = "";
+      messageDiv.innerHTML = "<h3>Your apple has been saved to the database! Thanks for contributing to Apple Expert!</h3>"
+      let a = new Apple(apple.data.id, apple.data.attributes)
+      a.displayApple()
     }) 
     .catch(err => alert(err));
   }
