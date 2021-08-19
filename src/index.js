@@ -5,6 +5,7 @@ const categorySelectSubmit = document.getElementById('category-form-submit')
 const appleCardsContainer = document.getElementById('apple-cards')
 const createAppleForm = document.getElementById('create-apple-form')
 const makeNewAppleBtn = document.getElementById('make-new-apple')
+const messageDiv = document.getElementById('messages')
 
 // Populate the dropdown menus with category objects so users can select/assign them dynamically:
 categoryApi.populateCategoryDropdown();
