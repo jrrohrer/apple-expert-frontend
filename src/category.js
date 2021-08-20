@@ -3,5 +3,4 @@ class Category {
     this.id = categoryId
     this.name = categoryAttributes.name
   }
-
 }
