@@ -10,6 +10,7 @@ class AppleApi {
     .then(response => response.json())
     .then(apples => {
       appleCardsContainer.innerHTML = ""; // clears any old search results before displaying new ones
+      messageDiv.innerHTML = ""; // clears any messages before new search
       apples.data.forEach(apple => {
         let a = new Apple(apple.id, apple.attributes)
         a.displayApple()
@@ -29,10 +30,20 @@ class AppleApi {
     .then(apple => {
       // Some UI work here: To let the user know their apple is successfully created, clear the apple-cards div of search results, add a success message, and display the new apple card
       appleCardsContainer.innerHTML = "";
-      messageDiv.innerHTML = "<h3>Your apple has been saved to the database! Thanks for contributing to Apple Expert!</h3>"
+      messageDiv.innerHTML = "<h3>Your apple has been saved to the database and will be included in future searches. Thanks for contributing to Apple Expert!</h3>"
       let a = new Apple(apple.data.id, apple.data.attributes)
       a.displayApple()
     }) 
     .catch(err => alert(err));
   }
+
+  deleteApple = (id) => {
+    fetch(`${port}/apples/${id}`, {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"},
+    })
+      .then(response => response.json())
+      .then(json => alert(json.message)) 
+  }
 }
+
