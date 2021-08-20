@@ -33,7 +33,7 @@ class Apple {
     return this.element;
   }
 
-  displayApple() {
+  displayApple = () => {
     const appleCard = this.getCard();
     //Apple.container.innerHTML += appleCard;
     Apple.container.appendChild(appleCard);
@@ -52,8 +52,3 @@ class Apple {
 }  
 
 Apple.all = []
-
-// Delete Buttons:
-// add event listener
-// remove() the div from the DOM
-// submit a fetch request to delete the apple from the DB
