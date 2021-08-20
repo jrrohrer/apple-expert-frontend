@@ -22,6 +22,7 @@ class Apple {
         <h3>${this.variety}</h3>
         <h4>Harvested in ${this.harvest}</h4>
         <p>${this.notes}</p>
+        <button id="delete-apple">Delete</button>
       </div>`;
   
     return appleCard;
@@ -34,10 +35,4 @@ class Apple {
 }  
 
 Apple.all = []
-  
-// build out apple class
-// remembering apples
-
-// html we want on the DOM for each apple
-// attach event listeners particular to each item
 

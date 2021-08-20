@@ -6,6 +6,7 @@ const appleCardsContainer = document.getElementById('apple-cards')
 const createAppleForm = document.getElementById('create-apple-form')
 const makeNewAppleBtn = document.getElementById('make-new-apple')
 const messageDiv = document.getElementById('messages')
+const deleteAppleButton = document.getElementById('delete-apple')
 
 // Populate the dropdown menus with category objects so users can select/assign them dynamically:
 categoryApi.populateCategoryDropdown();
@@ -18,7 +19,6 @@ makeNewAppleBtn.addEventListener('click', () => {
   let div = document.getElementById('new-apple-form-container');
   div.style.display = div.style.display == "none" ? "block" : "none";
 })
-
 
 // When the user clicks "Save New Apple", save the user's inputs to variables and use them to populate a post fetch to save the new apple object to the database.
 createAppleForm.addEventListener('submit', (e) => createFormHandler(e));
@@ -36,5 +36,5 @@ function createFormHandler(e) {
   e.target.reset()
 }
 
-// Then: adding an edit feature, adding a delete feature, error handling, and refactoring
-// Finally: styling!
+// add delete functions
+// remove message from dom when another button is clicked
