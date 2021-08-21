@@ -88,6 +88,11 @@ select {
   margin: 20px;
 }
 
+.apple-card img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 @media (min-width: 600px) {
   #apple-cards { grid-template-columns: repeat(2, 1fr); }
 }
