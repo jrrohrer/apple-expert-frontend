@@ -14,7 +14,6 @@ class Apple {
     // setting up event listeners
     this.element = document.createElement('div');
     this.element.addEventListener('click', this.handleDeleteClick)
-
     // remembering all instances of Apple
     Apple.all.push(this)
   }

@@ -11,6 +11,7 @@ class AppleApi {
     .then(apples => {
       appleCardsContainer.innerHTML = ""; // clears any old search results before displaying new ones
       messageDiv.innerHTML = ""; // clears any messages before new search
+      Apple.all = []; // clears the Apple.all array before handling the new search results
       apples.data.forEach(apple => {
         let a = new Apple(apple.id, apple.attributes)
         a.displayApple()
