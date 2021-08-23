@@ -43,6 +43,7 @@ class AppleApi {
         headers: {"Content-Type": "application/json"},
     })
       .then(response => response.json())
-      .then(json => alert(json.message)) 
+      .then(json => alert(json.message))
+      .catch(err => alert(err));
   }
 }
