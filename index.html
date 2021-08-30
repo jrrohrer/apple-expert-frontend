@@ -31,7 +31,7 @@
   <div id="new-apple-form-container" style="display:none;">
     <form id="create-apple-form">
       <label for="variety">Variety: </label><br>
-      <input id="input-variety" type="text" name="variety"><br>
+      <input id="input-variety" type="text" name="variety" required><br>
       <label for="harvest">Harvest: </label><br>
       <input id="input-harvest" type="text" name="harvest"><br>
       <label for="notes">Notes (flavor, storage, interesting facts, etc):</label><br>
@@ -39,7 +39,7 @@
       <label for="image_url">Image URL: </label><br>
       <input id="input-image-url" type="url" name="image_url"><br>
       <label for="category">Category (Ctrl-click to choose all that apply):</label><br>
-      <select id="add-category" name="category" multiple></select><br>
+      <select id="add-category" name="category" multiple required></select><br>
       <button id="save-new-apple" type="submit">Save New Apple</button>
     </form>
   </div>

@@ -21,11 +21,11 @@ class Apple {
   getCard() {
     const appleCard = `
       <div data-id=${this.id} class="apple-card">
-        <img src="${this.image_url}">
         <h3>${this.variety}</h3>
+        <img src="${this.image_url}">
         <h4>Harvested in ${this.harvest}</h4>
         <p>${this.notes}</p>
-        <button>Delete</button>
+        <button class="delete-btn">Delete</button>
       </div>`;
 
     this.element.innerHTML = appleCard;

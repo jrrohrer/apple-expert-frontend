@@ -86,11 +86,16 @@ select {
   border-radius: 8px;
   padding: 10px;
   margin: 20px;
+  height: 90%;
 }
 
 .apple-card img {
   max-width: 200px;
   max-height: 200px;
+}
+
+.delete-btn {
+  padding: inherit;
 }
 
 @media (min-width: 600px) {
